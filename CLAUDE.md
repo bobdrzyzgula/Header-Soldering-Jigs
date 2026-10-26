@@ -9,7 +9,8 @@ Written by Claude at Bob's direction. Bob asked that every new board get **both*
    - a new row in the board table in the top-level `README.md`
 
    Defaults:
-   - 1.0 mm through holes, 8 mm deep, with a 0.4 mm chamfer at the top and 0.3 mm at the bottom
+   - through holes drawn at 1.3 mm (Bob's tested fit on his printer; 1.0 mm printed too tight), 8 mm deep, with a 0.4 mm chamfer at the top and 0.3 mm at the bottom
+   - OpenSCAD Customizer: every numeric parameter gets a `// [min:step:max]` range on its own line's trailing comment, with its description on the line above. Without a range, the Customizer drops decimals.
    - a 4 mm margin around the board
    - an engraved board outline, a USB marker, and the variant name on a side face
    - for the component-side (`"top"`) version, pockets that clear the parts, with at least 0.75 mm of solid surface kept around every header body

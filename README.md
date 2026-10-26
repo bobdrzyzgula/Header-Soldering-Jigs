@@ -6,7 +6,7 @@ These are 3D-printable stands for soldering 0.1" pin headers onto microcontrolle
 
 ## How the stands work
 
-- **The jig:** a block with a hole for every pin. The holes are 1.0 mm, through the full 8 mm thickness of the block, and chamfered at both ends.
+- **The jig:** a block with a hole for every pin. The holes are drawn at 1.3 mm, go through the full 8 mm thickness of the block, and are chamfered at both ends.
 - **Using it:**
   1. Put generic male headers in the holes, **long pins down**, so their plastic bodies sit flat on the top face.
   2. Lay the board on the short pins.
@@ -32,4 +32,5 @@ Each board has two versions:
 ## Printing
 
 - Print with the top face up. No supports are needed.
-- If pins bind in the holes, raise `hole_d` to 1.1 mm in the Customizer, or run a 1.0 mm drill through the holes.
+- Holes are drawn at 1.3 mm. FDM printing makes holes smaller than drawn, and the Pico 2 stand printed at 1.0 mm needed its holes opened to 1.3 mm, after which it worked well. If your printer's holes come out tight or loose, adjust `hole_d` in the Customizer (0.05 mm steps).
+- Every numeric parameter has a range and step set, so the OpenSCAD Customizer keeps decimal values instead of rounding them to whole numbers.

@@ -29,30 +29,48 @@
 // Print top face up (holes vertical). No supports needed.
 
 /* [Main] */
-body_side      = "bottom";   // [bottom, top]
-include_debug  = true;       // holes for the 3-pin debug header
-hole_d         = 1.0;        // pin hole diameter (square 0.64 pin diagonal = 0.9)
-stand_h        = 8.0;        // stand thickness = hole depth (holes go through)
-margin         = 4.0;        // stand extends this far past the board outline
-usb_margin     = 6.5;        // extra room at the USB end for the USB pocket and marker
-corner_r       = 2.0;
+// Which side of the board the header plastic goes on
+body_side      = "bottom"; // [bottom, top]
+// Holes for the 3-pin debug header
+include_debug  = true;
+// Pin hole diameter as drawn; printed holes come out smaller (1.3 tested on a Pico 2 print)
+hole_d         = 1.3; // [0.8:0.05:1.6]
+// Stand thickness = hole depth (holes go through)
+stand_h        = 8.0; // [4:0.5:15]
+// Stand extends this far past the board outline
+margin         = 4.0; // [2:0.5:10]
+// Extra room at the USB end for the USB pocket and marker
+usb_margin     = 6.5; // [4:0.5:12]
+// Corner radius of the stand
+corner_r       = 2.0; // [0:0.5:5]
 
 /* [Hole entry] */
-countersink    = 0.4;        // chamfer depth at the top of each hole
-bottom_chamfer = 0.3;        // relieves elephant's-foot shrink of the holes
+// Chamfer depth at the top of each hole
+countersink    = 0.4; // [0:0.05:1]
+// Relieves elephant's-foot shrink of the holes
+bottom_chamfer = 0.3; // [0:0.05:1]
 
 /* [Component pocket: body_side = "top" only] */
-header_body_h  = 2.5;        // height of the header's plastic body (for reference)
-pocket_depth   = 2.5;        // gives header_body_h + pocket_depth = 5 mm under the board
-keepout        = 0.75;       // solid margin kept around each header body footprint
-header_body_w  = 2.54;
-usb_overhang   = 1.3;        // datasheet: micro-USB overhangs the top edge 1.3 mm (typ)
-usb_w          = 8.0;        // datasheet: 8 mm
-usb_clr        = 1.0;        // clearance around the USB overhang
+// Height of the header's plastic body (for reference)
+header_body_h  = 2.5; // [2:0.05:3.5]
+// Gives header_body_h + pocket_depth = 5 mm under the board
+pocket_depth   = 2.5; // [0:0.1:5]
+// Solid margin kept around each header body footprint
+keepout        = 0.75; // [0:0.05:2]
+// Footprint kept solid under each header body
+header_body_w  = 2.54; // [2.3:0.02:2.8]
+// Datasheet: micro-USB overhangs the top edge 1.3 mm (typ)
+usb_overhang   = 1.3; // [0:0.1:3]
+// Datasheet: 8 mm
+usb_w          = 8.0; // [5:0.1:12]
+// Clearance around the USB overhang
+usb_clr        = 1.0; // [0:0.1:3]
 
 /* [Markings] */
-engrave_depth  = 0.5;
-show_board     = false;      // preview ghost of the board and header bodies
+// Depth of the engraved outline and labels
+engrave_depth  = 0.5; // [0:0.1:1.5]
+// Preview ghost of the board and header bodies
+show_board     = false;
 
 /* [Hidden] */
 $fn = 24;

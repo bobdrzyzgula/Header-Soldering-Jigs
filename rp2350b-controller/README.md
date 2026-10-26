@@ -31,7 +31,7 @@ The 19 MB STEP file is not copied into this repository. It is only needed to reg
 ## Stand design
 
 - **Holes:**
-  - 1.0 mm through holes, which give clearance over the 0.9 mm diagonal of a square 0.64 mm pin.
+  - Through holes drawn at 1.3 mm. Printed holes come out smaller than drawn; 1.3 mm was the size that fit well on a printed Pico 2 stand.
   - The block is 8 mm thick. The holes go all the way through, so long-pin headers never bottom out.
   - Each hole has a 0.4 mm chamfer at the top so pins drop in easily, and a 0.3 mm chamfer at the bottom to offset elephant's foot.
 - **What sets the alignment:** the depth of the holes keeps the pins parallel. The board rests only on the plastic header bodies, which keeps it square to the pins.
@@ -49,7 +49,8 @@ The 19 MB STEP file is not copied into this repository. It is only needed to reg
 
 - Print with the top face up so the holes are vertical. No supports are needed.
 - Use at least 0.2 mm layers. Several perimeters around the holes help.
-- If pins bind in the holes, the printer is making holes undersized. Set `hole_d = 1.1` and re-export, or run a 1.0 mm drill through the holes. Pins should drop in freely without wobbling.
+- Holes are drawn at 1.3 mm. FDM printing makes holes smaller than drawn, and the Pico 2 stand printed at 1.0 mm needed its holes opened to 1.3 mm, after which it worked well. If your printer's holes come out tight or loose, adjust `hole_d` in the Customizer (0.05 mm steps). Pins should drop in freely without wobbling.
+- Every numeric parameter has a range and step set, so the OpenSCAD Customizer keeps decimal values instead of rounding them to whole numbers.
 
 ## Using the stand
 
@@ -74,7 +75,7 @@ The 19 MB STEP file is not copied into this repository. It is only needed to reg
 | Parameter | Default | Meaning |
 |---|---|---|
 | `body_side` | `"bottom"` | `"bottom"` or `"top"`: which side of the board the header plastic goes on |
-| `hole_d` | 1.0 | Pin hole diameter |
+| `hole_d` | 1.3 | Pin hole diameter as drawn |
 | `stand_h` | 8.0 | Stand thickness, which is also the hole depth |
 | `margin` | 4.0 | How far the stand extends past the board outline |
 | `countersink` / `bottom_chamfer` | 0.4 / 0.3 | Hole entry chamfers |

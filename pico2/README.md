@@ -32,7 +32,7 @@ The Pico 2 has no STEP file in this set. The datasheet gives no part outlines or
 ## Stand design
 
 - **Holes:**
-  - 1.0 mm through holes in an 8 mm block
+  - through holes drawn at 1.3 mm, in an 8 mm block
   - a 0.4 mm chamfer at the top of each hole and a 0.3 mm chamfer at the bottom
 - **Size:** the stand extends 4 mm past the board on three sides and 6.5 mm at the USB end, which makes room for the USB cutout and the "USB" mark.
 - **Markings:** the board outline is engraved on top, and the variant name is engraved on the left long face.
@@ -46,7 +46,8 @@ The Pico 2 has no STEP file in this set. The datasheet gives no part outlines or
 ## Printing
 
 - Print with the top face up. No supports are needed.
-- If pins bind, raise `hole_d` to 1.1 mm or run a 1.0 mm drill through the holes.
+- Holes are drawn at 1.3 mm. FDM printing makes holes smaller than drawn, and the Pico 2 stand printed at 1.0 mm needed its holes opened to 1.3 mm, after which it worked well. If your printer's holes come out tight or loose, adjust `hole_d` in the Customizer (0.05 mm steps).
+- Every numeric parameter has a range and step set, so the OpenSCAD Customizer keeps decimal values instead of rounding them to whole numbers.
 
 ## Using the stand
 
@@ -64,7 +65,7 @@ The Pico 2 has no STEP file in this set. The datasheet gives no part outlines or
 |---|---|---|
 | `body_side` | `"bottom"` | `"bottom"` or `"top"`: which side of the board the header plastic goes on |
 | `include_debug` | true | Include holes for the 3-pin debug header |
-| `hole_d` | 1.0 | Pin hole diameter |
+| `hole_d` | 1.3 | Pin hole diameter as drawn |
 | `stand_h` | 8.0 | Stand thickness, which is also the hole depth |
 | `margin` / `usb_margin` | 4.0 / 6.5 | How far the stand extends past the board / at the USB end |
 | `pocket_depth` | 2.5 | Pocket depth in the component-side version |

@@ -18,28 +18,44 @@
 // Print top face up (holes vertical). No supports needed.
 
 /* [Main] */
-body_side      = "bottom";   // [bottom, top]
-hole_d         = 1.0;        // pin hole diameter (square 0.64 pin diagonal = 0.9)
-stand_h        = 8.0;        // stand thickness = hole depth (holes go through)
-margin         = 4.0;        // stand extends this far past the board outline
-corner_r       = 2.0;
+// Which side of the board the header plastic goes on
+body_side      = "bottom"; // [bottom, top]
+// Pin hole diameter as drawn; printed holes come out smaller (1.3 tested on a Pico 2 print)
+hole_d         = 1.3; // [0.8:0.05:1.6]
+// Stand thickness = hole depth (holes go through)
+stand_h        = 8.0; // [4:0.5:15]
+// Stand extends this far past the board outline
+margin         = 4.0; // [2:0.5:10]
+// Corner radius of the stand
+corner_r       = 2.0; // [0:0.5:5]
 
 /* [Hole entry] */
-countersink    = 0.4;        // chamfer depth at the top of each hole (eases insertion)
-bottom_chamfer = 0.3;        // relieves elephant's-foot shrink of the holes
+// Chamfer depth at the top of each hole (eases insertion)
+countersink    = 0.4; // [0:0.05:1]
+// Relieves elephant's-foot shrink of the holes
+bottom_chamfer = 0.3; // [0:0.05:1]
 
 /* [Component pockets: body_side = "top" only] */
-header_body_h  = 2.5;        // height of the header's plastic body
-pocket_xy_clr  = 0.75;       // clearance around each component outline
-pocket_extra_z = 1.0;        // extra depth beyond what the tallest part needs
-pocket_min     = 1.0;        // never cut shallower than this
-merge_gap      = 2.5;        // pockets closer than ~2x this are merged (no slivers)
-keepout        = 0.75;       // solid margin kept around each header body footprint
-header_body_w  = 2.54;       // footprint kept solid under each header body
+// Height of the header's plastic body
+header_body_h  = 2.5; // [2:0.05:3.5]
+// Clearance around each component outline
+pocket_xy_clr  = 0.75; // [0:0.05:2]
+// Extra depth beyond what the tallest part needs
+pocket_extra_z = 1.0; // [0:0.1:3]
+// Never cut shallower than this
+pocket_min     = 1.0; // [0:0.1:3]
+// Pockets closer than ~2x this are merged (no slivers)
+merge_gap      = 2.5; // [0:0.1:5]
+// Solid margin kept around each header body footprint
+keepout        = 0.75; // [0:0.05:2]
+// Footprint kept solid under each header body
+header_body_w  = 2.54; // [2.3:0.02:2.8]
 
 /* [Markings] */
-engrave_depth  = 0.5;
-show_board     = false;      // preview the board/components ghost (not for export)
+// Depth of the engraved outline and labels
+engrave_depth  = 0.5; // [0:0.1:1.5]
+// Preview the board/components ghost (not for export)
+show_board     = false;
 
 include <rp2350b_data.scad>
 
