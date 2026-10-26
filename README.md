@@ -25,6 +25,10 @@ Each board has two versions:
 | [`rp2350b-controller/`](rp2350b-controller/) | WeAct Studio RP2350B Core Board, used in the sewing-machine motor controller | 2×15 + 2×15 + 1×4 | `HDK/3D_RP350B.step` from [WeAct's repository](https://github.com/WeActStudio/WeActStudio.RP2350BCoreBoard) |
 | [`pico2/`](pico2/) | Raspberry Pi Pico 2 (RP2350A) | 2×20 + 3-pin debug | Raspberry Pi Pico 2 datasheet, Figure 3 |
 
+## KiCad library
+
+[`kicad/`](kicad/) contains footprints and schematic symbols for both boards (the `MCU_Module_Boards` library), for designing carrier boards that host them. Its README has the full pin tables.
+
 ## Printing
 
 - Print with the top face up. No supports are needed.
