@@ -1,4 +1,5 @@
-// Header soldering stand for the RP2350B board in 3D_RP350B.step
+// Header soldering stand for the WeAct Studio RP2350B Core Board
+// (geometry from HDK/3D_RP350B.step in github.com/WeActStudio/WeActStudio.RP2350BCoreBoard)
 // Written by Claude at Bob's direction.
 //
 // How it is used:

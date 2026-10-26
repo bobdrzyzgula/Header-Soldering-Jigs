@@ -1,8 +1,10 @@
-# Header soldering stand for the RP2350B controller board
+# Header soldering stand for the WeAct Studio RP2350B Core Board
 
 *Written by Claude at Bob's direction.*
 
-This is a 3D-printed jig for soldering generic 0.1" male pin headers onto the RP2350B board used in the motor controller. It holds every pin vertical and parallel while you solder, so the headers come out straight. The board is defined by `3D_RP350B.step`, exported from EasyEDA Pro.
+This is a 3D-printed jig for soldering generic 0.1" male pin headers onto the WeAct Studio RP2350B Core Board, the board used in the sewing-machine motor controller. It holds every pin vertical and parallel while you solder, so the headers come out straight.
+
+The geometry comes from the board's STEP model, `HDK/3D_RP350B.step` in WeAct Studio's repository, [WeActStudio/WeActStudio.RP2350BCoreBoard](https://github.com/WeActStudio/WeActStudio.RP2350BCoreBoard). The data in this folder was extracted from that file as of commit `5b165b5` (February 2025). WeAct exported the model from EasyEDA Pro.
 
 ## Files
 
@@ -15,7 +17,7 @@ This is a 3D-printed jig for soldering generic 0.1" male pin headers onto the RP
 | `extract_step_to_scad.py` | Regenerates `rp2350b_data.scad` from the STEP file if the board changes. |
 | `rp2350b_stand_body_top_preview.png` | Top view of the component-side stand, showing the pockets |
 
-The 19 MB board STEP file (`3D_RP350B.step`) is not in this repository. It is only needed to regenerate the data file.
+The 19 MB STEP file is not copied into this repository. It is only needed to regenerate the data file, and it can be fetched from WeAct's repository (see the last section).
 
 ## The board, as read from the STEP file
 
@@ -92,9 +94,11 @@ openscad -D 'body_side="top"'    -o rp2350b_stand_body_top.stl    rp2350b_header
 
 ## Regenerating the data if the board changes
 
-When the PCB is revised, export a new STEP file from EasyEDA and run:
+If WeAct revises the board, fetch the current STEP file from their repository and rerun the extraction:
 
 ```sh
+git clone --depth 1 https://github.com/WeActStudio/WeActStudio.RP2350BCoreBoard.git
+cp WeActStudio.RP2350BCoreBoard/HDK/3D_RP350B.step .
 pip install --break-system-packages "cadquery-ocp<7.9"
 python3 extract_step_to_scad.py 3D_RP350B.step rp2350b_data.scad
 ```

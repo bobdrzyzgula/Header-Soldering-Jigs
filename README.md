@@ -22,7 +22,7 @@ Each board has two versions:
 
 | Folder | Board | Pins | Geometry source |
 |---|---|---|---|
-| [`rp2350b-controller/`](rp2350b-controller/) | RP2350B board for the sewing-machine motor controller | 2×15 + 2×15 + 1×4 | Board STEP file exported from EasyEDA Pro |
+| [`rp2350b-controller/`](rp2350b-controller/) | WeAct Studio RP2350B Core Board, used in the sewing-machine motor controller | 2×15 + 2×15 + 1×4 | `HDK/3D_RP350B.step` from [WeAct's repository](https://github.com/WeActStudio/WeActStudio.RP2350BCoreBoard) |
 | [`pico2/`](pico2/) | Raspberry Pi Pico 2 (RP2350A) | 2×20 + 3-pin debug | Raspberry Pi Pico 2 datasheet, Figure 3 |
 
 ## Printing

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Extract header-hole positions and top-side component outlines from an
-EasyEDA-exported board STEP file and write them as an OpenSCAD data file.
+EasyEDA-exported board STEP file (here, HDK/3D_RP350B.step from
+github.com/WeActStudio/WeActStudio.RP2350BCoreBoard) and write them as an OpenSCAD data file.
 
 Written by Claude at Bob's direction.
 
