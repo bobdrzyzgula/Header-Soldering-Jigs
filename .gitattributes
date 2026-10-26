@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# STL meshes are generated output; do not show line diffs
+*.stl -diff
